@@ -1,9 +1,16 @@
 import React from "react";
 import { Form, Col } from "react-bootstrap";
 
-interface SearchFormProps {}
+interface SearchFormProps {
+  params: {
+    description?: string;
+    location?: string;
+    full_time?: string;
+  };
+  onParamChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
 
-export const SearchForm: React.FC<{ params: any; onParamChange: any }> = ({
+export const SearchForm: React.FC<SearchFormProps> = ({
   params,
   onParamChange,
 }) => {
